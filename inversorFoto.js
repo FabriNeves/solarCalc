@@ -35,3 +35,12 @@ const inversor2 = new InversorFotovoltaico("BBPower 3kW", 500, 210, 15, 97.2, 31
 const inversor3 = new InversorFotovoltaico("BBPower 5kW", 500, 175, 15, 97.5, 5200);
 const inversor4 = new InversorFotovoltaico("BBPower 12kW", 800, 380, 20, 98, 12250);
 const inversor5 = new InversorFotovoltaico("BBPower 20kW", 800, 500, 20, 97.5, 20500);
+
+
+module.exports = {
+    inversor1,
+    inversor2,
+    inversor3,
+    inversor4,
+    inversor5
+  };
