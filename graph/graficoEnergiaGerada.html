@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de gráfico com Chart.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <canvas id="myChart"  width="600" height="400"></canvas>
+
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+                datasets: [{
+                    label: 'Energia Gerada (kWh)',
+                    data: [2136.494, 1308.367, 1047.482, 596.446, 310.952, 187.61, 270.568, 451.945, 832.314, 1408.783, 1744.802, 1998.516],
+                    fill: true,
+                    backgroundColor: 'rgba(0, 0, 0, 0)',
+                    borderColor: '#ffa500',
+                    borderWidth: 2,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#ffa500'
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                title: {
+                    display: true,
+                    text: 'Energia Gerada por Mês'
+                },
+                legend: {
+                    display: false
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                backgroundColor: '#282828',
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Energia Gerada por Mês',
+                        color: '#fff',
+                        font: {
+                            size: 16
+                        }
+                    }
+                },
+                elements: {
+                    line: {
+                        borderWidth: 2,
+                        borderColor: '#ffa500',
+                        backgroundColor: 'rgba(0, 0, 0, 0)'
+                    },
+                    point: {
+                        radius: 4,
+                        backgroundColor: '#ffa500'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

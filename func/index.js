@@ -49,8 +49,9 @@ async function getData(latitude, longitude, consumo) {
             OpenMeteo.meses[i].energiaGerada = energiaGerada;
         }
 
-        totalInfo.dadosMes = OpenMeteo.meses;        
-        //console.log(totalInfo);
+        totalInfo.dadosMes = OpenMeteo.meses;
+           
+        console.log(totalInfo);
         return totalInfo;
     } catch (error) {
         console.log(error);
@@ -59,7 +60,9 @@ async function getData(latitude, longitude, consumo) {
 
 
 export default getData;
-// getData(-22, -43.36, 1000);
+
+
+getData(-54, -70, 1000);
 
 //-22.87
 
