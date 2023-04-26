@@ -40,7 +40,8 @@ Este projeto foi desenvolvido em parceria com [Eduardo Queiroz](https://github.c
 
 Você pode conferir o front-end do sistema em [SolarCalc](https://github.com/eduardoqsilva/solarCalc) , que utiliza esse projeto como back-end.
 
-O projeto foi deployado no serviço de hospedagem de aplicações Vercel e pode ser acessado através do seguinte link:  [solar-calc-lilac.vercel.app](solar-calc-lilac.vercel.app)
+O projeto foi deployado no serviço de hospedagem de aplicações Vercel e pode ser acessado através do seguinte link: https://solar-calc-lilac.vercel.app/
+
 ## Bibliografia
 
 Leitura para a base de cálculo da API 
