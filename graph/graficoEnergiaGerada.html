@@ -1,30 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html >
 
 <head>
     <meta charset="UTF-8">
     <title>Exemplo de gráfico com Chart.js</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background-color: #282828;
+            color: #fff;
+        }
+        canvas {
+            display: inline;
+        }
+    </style>
 </head>
 
 <body>
-    <canvas id="myChart"  width="600" height="400"></canvas>
+    <canvas id="myChart" width="500" height="300" ></canvas>
+    <canvas id="grafico-temperatura"  width="500" height="300"></canvas>
+    <canvas id="grafico-irradiacao"  width="500" height="300"></canvas>
 
     <script>
         const ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, {
-            type: 'line',
+            type: 'bar',
             data: {
                 labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
                 datasets: [{
                     label: 'Energia Gerada (kWh)',
                     data: [2136.494, 1308.367, 1047.482, 596.446, 310.952, 187.61, 270.568, 451.945, 832.314, 1408.783, 1744.802, 1998.516],
-                    fill: true,
-                    backgroundColor: 'rgba(0, 0, 0, 0)',
-                    borderColor: '#ffa500',
+                    backgroundColor: '#ffa500',
                     borderWidth: 2,
-                    pointRadius: 4,
-                    pointBackgroundColor: '#ffa500'
+                    borderColor: '#ffa500',
                 }]
             },
             options: {
@@ -42,7 +50,7 @@
                 legend: {
                     display: false
                 },
-                responsive: true,
+                responsive: false,
                 maintainAspectRatio: false,
                 backgroundColor: '#282828',
                 plugins: {
@@ -68,6 +76,105 @@
                 }
             }
         });
+
+        const ctx2 = document.getElementById('grafico-temperatura').getContext('2d');
+        const myChart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+                datasets: [{
+                    label: 'Temperatura Anual (°C)',
+                    data: [25, 26, 26, 24, 22, 20, 19, 19, 20, 22, 23, 24],
+                    backgroundColor: '#ff6384',
+                    borderColor: '#ff6384',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                title: {
+                    display: true,
+                    text: 'Temperatura Anual'
+                },
+                legend: {
+                    display: false
+                },
+                responsive: false,
+                maintainAspectRatio: false,
+                backgroundColor: '#282828',
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Temperatura Anual',
+                        color: '#fff',
+                        font: {
+                            size: 16
+                        }
+                    }
+                },
+                elements: {
+                    rectangle: {
+                        borderWidth: 1,
+                        borderColor: '#ff6384',
+                        backgroundColor: '#ff6384'
+                    }
+                }
+            }
+        });
+
+        const ctx3 = document.getElementById('grafico-irradiacao').getContext('2d');
+        const myChart3 = new Chart(ctx3, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+                datasets: [{
+                    label: 'Irradiação Anual (kWh/m²)',
+                    data: [500, 550, 600, 700, 800, 900, 1000, 900, 800, 700, 600, 500],
+                    backgroundColor: '#36a2eb',
+                    borderColor: '#36a2eb',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                title: {
+                    display: true
+                },
+                responsive: false,
+                maintainAspectRatio: false,
+                backgroundColor: '#282828',
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Irradiação Anual',
+                        color: '#fff',
+                        font: {
+                            size: 16
+                        }
+                    }
+                },
+                elements: {
+                    rectangle: {
+                        borderWidth: 1,
+                        borderColor: '#ff6384',
+                        backgroundColor: '#ff6384'
+                    }
+                }
+            }
+        });
+
     </script>
 </body>
 
